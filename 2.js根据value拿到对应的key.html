@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let obj = {
+        1: "BTC",
+        2: "LTC",
+        3: "ETH",
+        4: "ETC",
+        5: "XRP",
+        6: "EOS",
+        7: "BCH",
+        8: "BSV",
+        9: "TRX",
+        10: "USDT",
+      };
+      // Object.keys(obj)//[1,2,3,4,5,6,7,8,9,10]
+      function findKey(value, compare = (a, b) => a === b) {
+        return Object.keys(obj).find((k) =>
+          compare(obj[k], value)
+        );
+      }
+
+      console.log(findKey("EOS"))//6
+    </script>
+  </body>
+</html>
