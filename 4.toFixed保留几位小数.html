@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = 2.33333;
+      function toFix(num1, num2) {
+        if (typeof num1 == "undefined") {
+          return num1;
+        } else {
+          return Number(num1.toFixed(num2));
+        }
+      }
+      console.log(toFix(num, 1))//2.3
+      console.log(toFix(num, 2))//2.33
+    </script>
+  </body>
+</html>
