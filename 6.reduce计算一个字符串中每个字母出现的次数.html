@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const str = "jshdjsihh";
+    const obj = str.split("").reduce((pre, item) => {
+      pre[item] ? pre[item]++ : (pre[item] = 1);
+      return pre;
+    }, {});
+    console.log(obj);
+    // d: 1
+    // h: 3
+    // i: 1
+    // j: 2
+    // s: 2
+  </script>
+</html>
