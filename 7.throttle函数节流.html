@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>节流</title>
+  </head>
+  <body>
+    <script>
+      //规定在一个单位时间内，只能触发一次函数。如果这个单位时间内触发多次函数，只有一次生效
+      function throttle(fn, delay) {
+        let flag = true,
+          timer = null;
+        return function (...args) {
+          let context = this;
+          if (!flag) return;
+          flag = false;
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            fn.apply(context, args);
+            flag = true;
+          }, delay);
+        };
+      }
+      //适合应用场景:
+      //鼠标的点击事件，比如mousedown只触发一次
+      //监听滚动事件，比如是否滑到底部自动加载更多，用throttle判断
+      //比如游戏中发射子弹的频率(1秒发射一颗)
+    </script>
+  </body>
+</html>

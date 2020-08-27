@@ -7,6 +7,7 @@
   </head>
   <body>
     <script>
+      //在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时。
       function debounce(func, delay) {
         let timer = null;
         return function (...args) {
@@ -20,6 +21,9 @@
       // 使用
       // const refresh = debounce(方法, 200);
       // refresh()
+      //适合应用场景：
+      //search搜索，用户不断输入值时，用防抖来节约Ajax请求,也就是输入框事件
+      //window触发resize时，不断的调整浏览器窗口大小会不断的触发这个事件，用防抖来让其只触发一次
     </script>
   </body>
 </html>
